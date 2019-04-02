@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<style>
+    .headbox
+    {
+        width: 100%;
+        height: 15%;
+        background-color: #0099cc;
+    }
+    .head-biaoti
+    {
+        margin-left: 25px;
+    }
+    .weizhilan
+    {
+        width: 100%;
+        font-size: 14px;
+        background-color: 	#E0E0E0;
+    }
+    .main-box{
+        height: 75%;
+        width: 100%;
+    }
+    .box-left{
+        width: 25%;
+        height: 100%;
+        background-color: #edece5;
+    }
+    .witheSpace
+    {
+        width: 3%;
+        height: 100%;
+    }
+    .box-right
+    {
+        width: 100%;
+        height: 100%;
+        text-align:center
+    }
+</style>
+
+<body>
+    <div class="headbox">
+        <div class="headbox-img-frist">
+            <a href="/booklist"><img src=""></a>
+        </div>
+        <div class="head-biaoti">
+            <h3>图书借阅系统</h3>
+        </div>
+    </div>
+    <div class="weizhilan" layout:fragment="weizi">
+        当前位置：首页 &gt; <em>页面</em>
+    </div>
+    <table style="height: 550px;" class="main-box">
+        <tr>
+            <td  class="box-left" valign="top">
+                <div th:replace="/userpage/layout/main_left_user :: leftbox"></div>
+            </td>
+            <td class="witheSpace"></td>
+            <td class="box-right" valign="top">
+                <div style="margin-top: 95px;" layout:fragment="content"></div>
+            </td>
+        </tr>
+    </table>
+    <div class="bottomBox" th:replace="/commpage/main_bottom :: bottom"></div>
+</body>
+</html>

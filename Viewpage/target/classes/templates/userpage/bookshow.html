@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>图书借阅系统</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>名称</th>
+            <td th:text="${book.bname}"></td>
+        </tr>
+        <tr>
+            <th>作者</th>
+            <td th:text="${book.bworks}"></td>
+        </tr>
+        <tr>
+            <th>出版社</th>
+            <td th:text="${book.bpress}"></td>
+        </tr>
+        <tr>
+            <th>出版时间</th>
+            <td th:text="${#dates.format(book.btime, 'yyyy-MM-dd')}"></td>
+        </tr>
+        <tr>
+            <th>简介</th>
+            <td th:text="${book.bedsc}"></td>
+        </tr>
+        <tr>
+            <th>馆中剩余图书</th>
+            <td th:text="${book.bnum}"></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改图书</title>
+</head>
+
+<body>
+<center>
+    <form action="#" th:action="@{./updatabook}" th:object="${book}" method="post">
+        <table class="form" >
+            <tr>
+                <td>书本编号：</td>
+                <td><input type="text" readonly="readonly"  name="bid"  th:value="${book.bid}"></td>
+            </tr>
+            <tr>
+                <td>书&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
+                <td><input type="text" name="bname" th:value="${book.bname}"></td>
+            </tr>
+            <tr>
+                <td>作&nbsp;&nbsp;&nbsp;&nbsp;者：</td>
+                <td><input type="text" name="bworks" th:value="${book.bworks}"></td>
+            </tr>
+            <tr>
+                <td>出版单位：</td>
+                <td><input type="text" name="bpress" th:value="${book.bpress}"></td>
+            </tr>
+            <tr>
+                <td>出版时间：</td>
+                <td><input style="padding-left: 26px;" type="date" name="btime" th:value="${book.btime}"></td>
+            </tr>
+            <tr>
+                <td>简介：</td>
+                <td><input type="text" name="bedsc" th:value="${book.bedsc}"></td>
+            </tr>
+        </table>
+        <input class="button button-primary-flat button-small" type="submit" style="margin-left: 40px;margin-top: 10px;" value="修改">
+    </form>
+</center>
+</body>
+</html>

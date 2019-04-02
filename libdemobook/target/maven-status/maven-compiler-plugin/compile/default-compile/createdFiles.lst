@@ -1,0 +1,4 @@
+com\twx\book\repository\BookRepository.class
+com\twx\book\BookServiceApplication.class
+com\twx\book\controller\BookController.class
+com\twx\book\model\Book.class

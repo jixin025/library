@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="/guanlipage/layout/main_layout_guanli">
+<head>
+    <meta charset="UTF-8">
+    <title>图书借阅系统</title>
+    <script th:src="@{./js/guanli-js/user.js}"></script>
+    <script th:src="@{./js/jquery-3.3.1.js}"></script>
+    <script th:src="@{./js/artDialog/dialog.js}"></script>
+    <link rel="stylesheet" href="./css/buttons.css" type="text/css" />
+</head>
+<body>
+<div class="weizhilan" layout:fragment="weizi">
+    当前位置：首页 &gt; <em>用户归还</em>
+</div>
+<div class="userbook-list" layout:fragment="content">
+    <center>
+        <form action="#" th:action="@{./guanliqueryname}" method="post">
+            用户名：<input type="text" name="uname" placeholder="请输入用户名"><br>
+            <input class="button button-primary button-rounded button-small" style="margin-left: 55px; margin-top: 20px;" type="submit" value="查询">
+        </form>
+    </center>
+</div>
+</body>
+</html>

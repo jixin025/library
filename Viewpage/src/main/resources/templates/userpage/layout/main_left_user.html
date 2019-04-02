@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<div th:fragment="leftbox">
+
+    <div class="columnLeftMenu">
+
+        <h6 style="font-size: 20px;"><span class="f-right" style="margin-left: 10px;"></span>用户服务菜单</h6>
+        <ul>
+            <li style="height: 50px; width: 100%;list-style: none;">
+    <a style="text-decoration:none; color: black;"  th:href="@{./booklist}">库中书籍</a></li>
+            <li style="height: 50px; width: 100%;list-style: none;"><a style="text-decoration:none; color: black;" th:href="@{./jiebooklist}">已借图书</a></li>
+            <li style="height: 50px; width: 100%;list-style: none;"><a style="text-decoration:none; color: black;" th:href="@{./exit}">退出系统</li>
+        </ul>
+
+    </div>
+</div>
+</body>
+</html>

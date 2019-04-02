@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: zuul-service
+
+#:注册服务至注册中心
+server:
+  port: 1411
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1410/eureka/
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 60 #没过60秒给注册中心发送心跳
+    lease-expiration-duration-in-seconds: 120 #超过120秒没发送心跳，让注册中心删除实例
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+zuul:
+  sensitiveHeaders: Authorization
+  ignored-headers: Access-Control-Allow-Credentials,Access-Control-Allow-Origin,Vary,X-Frame-Options
+  host:
+    socket-timeout-millis: 12000
+    connect-timeout-millis: 12000
+  routes:
+    user:
+      path: /user-data-Sql/**
+      serviceId: user-data-Sql
+      sensitiveHeaders: "*"
+
+    page:
+      path: /view/**
+      serviceId: view
+      sensitiveHeaders: "*"
+    book:
+      path: /book-data-Sql/**
+      sericeId: book-data-Sql
+      sensitiveHeaders: "*"
+    guanli:
+      path: /guanli-data-Sql/**
+      sericeId: guanli-data-Sql
+      sensitiveHeaders: "*"
+    jiehuan:
+      path: /danju-data-Sql/**
+      sericeId: danju-data-Sql
+      sesitiveHeaders: "*"
+  add-host-header: true
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000

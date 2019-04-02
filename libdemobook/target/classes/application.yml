@@ -1,0 +1,29 @@
+#随机端口
+server:
+  port: 1427
+#:注册服务至注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1410/eureka/
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 60 #没过60秒给注册中心发送心跳
+    lease-expiration-duration-in-seconds: 120 #超过120秒没发送心跳，让注册中心删除实例
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+#数据源
+spring:
+  application:
+    name: book-data-Sql
+  datasource:
+    url: jdbc:mysql://localhost:3306/lib_book?characterEncoding=utf8
+    username: root
+    password: admin
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database:
+    database-platform: org.hibernate.dialect.MySQL5Dialect

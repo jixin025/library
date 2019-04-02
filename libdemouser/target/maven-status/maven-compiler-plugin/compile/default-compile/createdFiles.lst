@@ -1,0 +1,4 @@
+com\twx\user\repository\UserRepository.class
+com\twx\user\model\User.class
+com\twx\user\controller\UserController.class
+com\twx\user\UserServiecApplication.class

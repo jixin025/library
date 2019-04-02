@@ -1,0 +1,4 @@
+com\twx\guanli\model\Guanli.class
+com\twx\guanli\GuanliApplication.class
+com\twx\guanli\controller\GuanliController.class
+com\twx\guanli\repository\GuanliRepository.class

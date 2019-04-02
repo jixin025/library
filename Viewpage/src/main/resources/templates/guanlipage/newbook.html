@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新增图书</title>
+</head>
+
+<body>
+<center>
+    <form action="#" th:action="@{./newbook}" th:object="${book}" method="post">
+        <table>
+            <tr>
+                <td>书&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
+                <td><input type="text" name="bname"></td>
+            </tr>
+            <tr>
+                <td>作&nbsp;&nbsp;&nbsp;&nbsp;者：</td>
+                <td><input type="text" name="bworks"></td>
+            </tr>
+            <tr>
+                <td>出版单位：</td>
+                <td><input type="text" name="bpress"></td>
+            </tr>
+            <tr>
+                <td>出版时间：</td>
+                <td><input style="padding-left: 26px;"  type="date" name="btime"></td>
+            </tr>
+            <tr>
+                <td>馆藏数量：</td>
+                <td><input type="text" name="bnum"></td>
+            </tr>
+            <tr>
+                <td>简&nbsp;&nbsp;&nbsp;&nbsp;介：</td>
+                <td><input type="text" name="bedsc"></td>
+            </tr>
+        </table>
+        <input class="button button-primary-flat button-small" style="margin-left: 40px;margin-top: 10px;"  type="submit" value="添加">
+    </form>
+</center>
+</body>
+</html>

@@ -1,0 +1,24 @@
+#随机端口
+server:
+  port: 1426
+
+#服务注册到注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1410/eureka/
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 60 #没过60秒给注册中心发送心跳
+    lease-expiration-duration-in-seconds: 120 #超过120秒没发送心跳，让注册中心删除实例
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+spring:
+  application:
+    name: view
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+

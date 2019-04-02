@@ -1,0 +1,4 @@
+com\twx\jiehuan\repository\DanjuRepository.class
+com\twx\jiehuan\Controller\DanjuController.class
+com\twx\jiehuan\JiehuanApplication.class
+com\twx\jiehuan\Model\Danju.class

@@ -1,0 +1,30 @@
+<!--修改用户-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改用户</title>
+</head>
+
+<body>
+<center>
+    <form action="#" th:action="@{./updatauser}" th:object="${user}" method="post">
+        <table>
+            <tr>
+                <td>用户编号：</td>
+                <td><input type="text" readonly="readonly"  name="uid"  th:value="${user.uid}"></td>
+            </tr>
+            <tr>
+                <td>用户名称：</td>
+                <td><input type="text" name="uname" th:value="${user.uname}"></td>
+            </tr>
+            <tr>
+                <td>密&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
+                <td><input type="text" name="upass" th:value="${user.upass}"></td>
+            </tr>
+        </table>
+       <input class="button button-primary-flat button-small"  style="margin-left: 40px;margin-top: 10px;"  type="submit" value="修改">
+    </form>
+</center>
+</body>
+</html>

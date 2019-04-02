@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="/userpage/layout/main_layout_user">
+<head>
+    <meta charset="UTF-8">
+    <title>图书借阅系统</title>
+    <script th:src="@{./js/user-js/yijie.js}"></script>
+    <script th:src="@{./js/jquery-3.3.1.js}"></script>
+    <script th:src="@{./js/artDialog/dialog.js}"></script>
+    <link rel="stylesheet" href="./css/buttons.css" type="text/css" />
+</head>
+
+<body>
+<div class="weizhilan" layout:fragment="weizi">
+    当前位置：首页 &gt; <em >已借书籍</em>
+</div>
+<div class="userbook-list" layout:fragment="content">
+    <table style="margin-top: 30px;">
+        <thead>
+        <tr style="background-color: #E0E0E0;">
+            <th style="width: 100px">书籍编号</th>
+            <th style="width: 200px">书名</th>
+            <th style="width: 200px">作者</th>
+            <th style="width: 130px">借书日期</th>
+            <th style="width: 130px">归还日期</th>
+            <th style="width: 200px">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <div class="table">
+            <tr th:each="book : ${booklist}">
+                <th:block th:each="danju : ${danjulist}" th:if="${book.bid}==${danju.bid}">
+                <td th:text="${book.bid}">${danju.bid}</td>
+                <td th:text="${book.bname}">${book.bname}</td>
+                <td th:text="${book.bworks}">${book.bworks}</td>
+                <td th:text="${danju.jietime}">${danju.jietime}</td>
+                <td th:text="${danju.huantime}">${danju.huantime}</td>
+                <td>
+                    <a class="button button-primary button-rounded button-small" style="color: #3c3f41;font-weight:bolder;" th:onclick="'javascript:guihuan('+${danju.bid}+')'">归还</a>
+                    <a class="button button-primary button-rounded button-small" style="color: #3c3f41;font-weight:bolder;" th:onclick="'javascript:xujie('+${danju.bid}+')'">续借</a>
+                </td>
+                </th:block>
+            </tr>
+        </div>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
